@@ -1,0 +1,27 @@
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    static int countWords(String s){
+       if (s == null || s.isEmpty()) 
+       { 
+           return 0;
+       } 
+        String[] words = s.split("\\s+"); 
+        return words.length;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        System.out.println(countWords(s));
+    }
+}
+/*
+If you are new to a regular expression in Java, the \s is a character class to detect space including tabs, 
+since \ needs to be escaped in Java, it becomes \\s and because there could be multiple spaces between words
+we made this regular expression greedy by adding +, hence \\s+ will find one more space and split the String accordingly.
+*/
+
+
+Read more: https://www.java67.com/2016/09/3-ways-to-count-words-in-java-string.html#ixzz7nvnVUEn5
