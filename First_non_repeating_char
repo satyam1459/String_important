@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void FirstNonRepeat(String s)
+  {
+ 
+    for (int i = 0; i < s.length(); i++) {
+            //indexOf(char ch) 
+        //int indexOf(char ch, int fromIndex)--> if char is not present it will return -1;
+      if (s.indexOf(s.charAt(i), s.indexOf(s.charAt(i)) + 1) == -1) {
+        System.out.println( s.charAt(i));
+        return;
+      }
+    }
+    System.out.println(-1);
+  }
+
+    public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        FirstNonRepeat(s);
+            
+    }
+}
